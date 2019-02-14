@@ -14,12 +14,12 @@ mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', "*");
-    res.header('Access-Control-Allow-Methods', '*');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+app.use(function(request, response, next) {
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Methods", "POST,GET,DELETE,PUT");
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, x-access-token,Content-Type, Accept");
     next();
-})
+});
 
 app.get('/', function (req, res) {
     res.json("Rest api");

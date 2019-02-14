@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Appointments from '@/components/Appointments'
+import NewAppointment from '@/components/NewAppointment'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 
@@ -23,6 +24,17 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
-    }
+    },
+    {
+      path: '/appointments/new',
+      name: 'NewAppointment',
+      component: NewAppointment
+    },
+    {
+      path: '/appointments/:id',
+      name: 'EditAppointment',
+      component: NewAppointment
+    },
+    {path: '*', redirect: '/'}
   ]
 })

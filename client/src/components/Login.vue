@@ -29,7 +29,7 @@
     },
     updated() {
       if (localStorage.token) {
-        this.$router.replace(this.$route.query.redirect || '/appointments')
+        this.$router.replace(this.$route.query.redirect || '/')
       }
     },
     methods: {
@@ -46,7 +46,7 @@
         }
         this.error = false
         localStorage.token = req.data.data.token
-        this.$router.replace(this.$route.query.redirect || '/appointments')
+        this.$router.replace(this.$route.query.redirect || '/')
       },
       loginFailed() {
         this.error = 'Login failed!'

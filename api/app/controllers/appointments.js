@@ -5,7 +5,9 @@ module.exports = {
         const {appointmentId} = req.params;
         appointmentModel.findById(appointmentId)
             .then(response => {
-                res.json({status: true, message: "Appointment found!", data: response});
+                const message = response == null ? 'Appointment not found' : 'Appoint found';
+                const status = response == null ? false : true;
+                res.json({status, message, data: response});
             })
             .catch(err => next(err))
     },

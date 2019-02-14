@@ -19,7 +19,7 @@ const AppointmentSchema = new Schema({
         required: "Customer email cannot be left blank"
     },
     customer_phone: {
-        type: [Number,"Phone must be number"],
+        type: Number,
         trim: true,
         required: "Customer phone cannot be left blank"
     },

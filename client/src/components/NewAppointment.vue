@@ -36,12 +36,12 @@
     name: 'NewAppointment',
     data() {
       return {
-        customer_name: 'sdf',
-        customer_surname: 'sdfds',
-        customer_email: 'df@df.df',
-        customer_phone: 1212,
-        start_time: '2014-05-11',
-        distance: 334
+        customer_name: '',
+        customer_surname: '',
+        customer_email: '',
+        customer_phone: '',
+        start_time: '',
+        distance: ''
       }
     },
     methods: {
